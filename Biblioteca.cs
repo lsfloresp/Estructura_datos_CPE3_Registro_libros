@@ -13,6 +13,11 @@ public class Biblioteca
             Console.WriteLine("El código del libro ya está registrado.");
             return;
         }
+        if (libro.Ejemplares < 0)
+        {
+            Console.WriteLine("El número de ejemplares no puede ser negativo.");
+            return;
+        }
 
         libros.Add(libro.Codigo, libro);
         categorias.Add(libro.Categoria);
