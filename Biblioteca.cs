@@ -40,4 +40,22 @@ public class Biblioteca
         Console.WriteLine("----------------------------------------");
     }
 }
+    public void BuscarLibro(int codigo)
+{
+    if (libros.ContainsKey(codigo))
+    {
+        Libro libro = libros[codigo];
+
+        Console.WriteLine("Libro encontrado.");
+        Console.WriteLine($"Código: {libro.Codigo}");
+        Console.WriteLine($"Título: {libro.Titulo}");
+        Console.WriteLine($"Autor: {libro.Autor}");
+        Console.WriteLine($"Categoría: {libro.Categoria}");
+        Console.WriteLine($"Ejemplares: {libro.Ejemplares}");
+    }
+    else
+    {
+        Console.WriteLine("El libro no está registrado.");
+    }
+}
 }
