@@ -15,7 +15,8 @@ do
     Console.WriteLine("3. Buscar libro por código");
     Console.WriteLine("4. Modificar ejemplares");
     Console.WriteLine("5. Eliminar libro");
-    Console.WriteLine("6. Salir");  
+    Console.WriteLine("6. Mostrar categorías");
+    Console.WriteLine("7. Salir");  
     Console.WriteLine("----------------------------------------");
     Console.Write("Seleccione una opción: ");
 
@@ -80,6 +81,11 @@ do
             break;
 
         case 6:
+            biblioteca.MostrarCategorias();
+
+            break;
+
+        case 7:
 
             Console.WriteLine("Saliendo del sistema...");
 
@@ -92,4 +98,4 @@ do
             break;
     }
 
-} while (opcion != 6);
+} while (opcion != 7);

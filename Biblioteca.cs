@@ -4,6 +4,7 @@ using System.Collections.Generic;
 public class Biblioteca
 {
     private Dictionary<int, Libro> libros = new Dictionary<int, Libro>();
+    private HashSet<string> categorias = new HashSet<string>();
 
     public void RegistrarLibro(Libro libro)
     {
@@ -14,6 +15,7 @@ public class Biblioteca
         }
 
         libros.Add(libro.Codigo, libro);
+        categorias.Add(libro.Categoria);
 
         Console.WriteLine("Libro registrado correctamente.");
     }
@@ -79,6 +81,18 @@ public class Biblioteca
     else
     {
         Console.WriteLine("El libro no está registrado.");
+    }
+}
+    public void MostrarCategorias()
+{
+    Console.WriteLine();
+    Console.WriteLine("----------------------------------------");
+    Console.WriteLine("          CATEGORÍAS REGISTRADAS");
+    Console.WriteLine("----------------------------------------");
+
+    foreach (string categoria in categorias)
+    {
+        Console.WriteLine($"- {categoria}");
     }
 }
 }
