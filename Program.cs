@@ -29,7 +29,12 @@ do
             Libro nuevoLibro = new Libro();
 
             Console.Write("Ingrese el código del libro: ");
-            nuevoLibro.Codigo = int.Parse(Console.ReadLine());
+            int codigo;
+            while (!int.TryParse(Console.ReadLine(), out codigo))
+            {
+             Console.Write("Entrada no válida. Ingrese únicamente números: ");
+            }
+            nuevoLibro.Codigo = codigo;
 
             Console.Write("Ingrese el título del libro: ");
             nuevoLibro.Titulo = Console.ReadLine();
