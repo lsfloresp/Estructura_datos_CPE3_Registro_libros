@@ -58,4 +58,16 @@ public class Biblioteca
         Console.WriteLine("El libro no está registrado.");
     }
 }
+    public void ModificarEjemplares(int codigo, int nuevosEjemplares)
+{
+    if (libros.ContainsKey(codigo))
+    {
+        libros[codigo].Ejemplares = nuevosEjemplares;
+        Console.WriteLine("Número de ejemplares actualizado correctamente.");
+    }
+    else
+    {
+        Console.WriteLine("El libro no está registrado.");
+    }
+}
 }

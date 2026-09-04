@@ -13,7 +13,8 @@ do
     Console.WriteLine("1. Registrar libro");
     Console.WriteLine("2. Mostrar libros");
     Console.WriteLine("3. Buscar libro por código");
-    Console.WriteLine("4. Salir");
+    Console.WriteLine("4. Modificar ejemplares");
+    Console.WriteLine("5. Salir");  
     Console.WriteLine("----------------------------------------");
     Console.Write("Seleccione una opción: ");
 
@@ -59,6 +60,17 @@ do
             break;
 
         case 4:
+            Console.Write("Ingrese el código del libro: ");
+            int codigoModificar = int.Parse(Console.ReadLine());
+
+            Console.Write("Ingrese el nuevo número de ejemplares: ");
+            int nuevosEjemplares = int.Parse(Console.ReadLine());
+
+            biblioteca.ModificarEjemplares(codigoModificar, nuevosEjemplares);
+
+            break;
+
+        case 5:
 
             Console.WriteLine("Saliendo del sistema...");
 
@@ -71,4 +83,4 @@ do
             break;
     }
 
-} while (opcion != 4);
+} while (opcion != 5);
