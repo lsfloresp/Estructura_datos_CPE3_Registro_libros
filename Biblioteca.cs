@@ -70,4 +70,15 @@ public class Biblioteca
         Console.WriteLine("El libro no está registrado.");
     }
 }
+    public void EliminarLibro(int codigo)
+{
+    if (libros.Remove(codigo))
+    {
+        Console.WriteLine("Libro eliminado correctamente.");
+    }
+    else
+    {
+        Console.WriteLine("El libro no está registrado.");
+    }
+}
 }

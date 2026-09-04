@@ -14,7 +14,8 @@ do
     Console.WriteLine("2. Mostrar libros");
     Console.WriteLine("3. Buscar libro por código");
     Console.WriteLine("4. Modificar ejemplares");
-    Console.WriteLine("5. Salir");  
+    Console.WriteLine("5. Eliminar libro");
+    Console.WriteLine("6. Salir");  
     Console.WriteLine("----------------------------------------");
     Console.Write("Seleccione una opción: ");
 
@@ -69,8 +70,16 @@ do
             biblioteca.ModificarEjemplares(codigoModificar, nuevosEjemplares);
 
             break;
-
+        
         case 5:
+            Console.Write("Ingrese el código del libro a eliminar: ");
+            int codigoEliminar = int.Parse(Console.ReadLine());
+
+            biblioteca.EliminarLibro(codigoEliminar);
+
+            break;
+
+        case 6:
 
             Console.WriteLine("Saliendo del sistema...");
 
@@ -83,4 +92,4 @@ do
             break;
     }
 
-} while (opcion != 5);
+} while (opcion != 6);
