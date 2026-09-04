@@ -12,7 +12,8 @@ do
     Console.WriteLine("----------------------------------------");
     Console.WriteLine("1. Registrar libro");
     Console.WriteLine("2. Mostrar libros");
-    Console.WriteLine("3. Salir");
+    Console.WriteLine("3. Buscar libro por código");
+    Console.WriteLine("4. Salir");
     Console.WriteLine("----------------------------------------");
     Console.Write("Seleccione una opción: ");
 
@@ -48,8 +49,16 @@ do
             biblioteca.MostrarLibros();
 
             break;
-
+        
         case 3:
+            Console.Write("Ingrese el código del libro a buscar: ");
+            int codigoBuscar = int.Parse(Console.ReadLine());
+
+            biblioteca.BuscarLibro(codigoBuscar);
+
+            break;
+
+        case 4:
 
             Console.WriteLine("Saliendo del sistema...");
 
@@ -62,4 +71,4 @@ do
             break;
     }
 
-} while (opcion != 3);
+} while (opcion != 4);
