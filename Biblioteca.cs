@@ -17,4 +17,27 @@ public class Biblioteca
 
         Console.WriteLine("Libro registrado correctamente.");
     }
+    public void MostrarLibros()
+{
+    Console.WriteLine();
+    Console.WriteLine("----------------------------------------");
+    Console.WriteLine("           LIBROS REGISTRADOS");
+    Console.WriteLine("----------------------------------------");
+
+    if (libros.Count == 0)
+    {
+        Console.WriteLine("No existen libros registrados.");
+        return;
+    }
+
+    foreach (Libro libro in libros.Values)
+    {
+        Console.WriteLine($"Código: {libro.Codigo}");
+        Console.WriteLine($"Título: {libro.Titulo}");
+        Console.WriteLine($"Autor: {libro.Autor}");
+        Console.WriteLine($"Categoría: {libro.Categoria}");
+        Console.WriteLine($"Ejemplares: {libro.Ejemplares}");
+        Console.WriteLine("----------------------------------------");
+    }
+}
 }

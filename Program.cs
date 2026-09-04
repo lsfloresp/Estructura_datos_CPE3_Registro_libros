@@ -2,25 +2,64 @@
 
 Biblioteca biblioteca = new Biblioteca();
 
-Console.WriteLine("----------------------------------------");
-Console.WriteLine("          REGISTRO DE LIBRO");
-Console.WriteLine("----------------------------------------");
+int opcion;
 
-Libro nuevoLibro = new Libro();
+do
+{
+    Console.WriteLine();
+    Console.WriteLine("----------------------------------------");
+    Console.WriteLine("          SISTEMA DE BIBLIOTECA");
+    Console.WriteLine("----------------------------------------");
+    Console.WriteLine("1. Registrar libro");
+    Console.WriteLine("2. Mostrar libros");
+    Console.WriteLine("3. Salir");
+    Console.WriteLine("----------------------------------------");
+    Console.Write("Seleccione una opción: ");
 
-Console.Write("Ingrese el código del libro: ");
-nuevoLibro.Codigo = int.Parse(Console.ReadLine());
+    opcion = int.Parse(Console.ReadLine());
 
-Console.Write("Ingrese el título del libro: ");
-nuevoLibro.Titulo = Console.ReadLine();
+    switch (opcion)
+    {
+        case 1:
 
-Console.Write("Ingrese el autor del libro: ");
-nuevoLibro.Autor = Console.ReadLine();
+            Libro nuevoLibro = new Libro();
 
-Console.Write("Ingrese la categoría del libro: ");
-nuevoLibro.Categoria = Console.ReadLine();
+            Console.Write("Ingrese el código del libro: ");
+            nuevoLibro.Codigo = int.Parse(Console.ReadLine());
 
-Console.Write("Ingrese el número de ejemplares: ");
-nuevoLibro.Ejemplares = int.Parse(Console.ReadLine());
+            Console.Write("Ingrese el título del libro: ");
+            nuevoLibro.Titulo = Console.ReadLine();
 
-biblioteca.RegistrarLibro(nuevoLibro);
+            Console.Write("Ingrese el autor del libro: ");
+            nuevoLibro.Autor = Console.ReadLine();
+
+            Console.Write("Ingrese la categoría del libro: ");
+            nuevoLibro.Categoria = Console.ReadLine();
+
+            Console.Write("Ingrese el número de ejemplares: ");
+            nuevoLibro.Ejemplares = int.Parse(Console.ReadLine());
+
+            biblioteca.RegistrarLibro(nuevoLibro);
+
+            break;
+
+        case 2:
+
+            biblioteca.MostrarLibros();
+
+            break;
+
+        case 3:
+
+            Console.WriteLine("Saliendo del sistema...");
+
+            break;
+
+        default:
+
+            Console.WriteLine("Opción no válida.");
+
+            break;
+    }
+
+} while (opcion != 3);
